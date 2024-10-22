@@ -1,0 +1,16 @@
+Index:
+  HOSE:
+    - VNINDEX
+    - VN30
+  HNX:
+    - HNX30
+  UPCOM:
+    - UPCOMINDEX
+
+Equity:
+  Underlying:
+    - ACB
+    - FPT
+    - HPG
+    - MBB
+    - MWG

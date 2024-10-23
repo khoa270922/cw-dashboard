@@ -80,8 +80,9 @@ with st.sidebar:
 
 # Main Content: Display the query result on the right
 # st.title("Stock Data Dashboard")
+st.title("_Stock Dashboard_ is :blue[cool] :sunglasses:")
 if st.session_state.selected_stock:
-    st.write(f"{st.session_state.selected_stock} daily analysis:  ")
+    st.markdown(f'''Happy analyz-ing {st.session_state.selected_stock} :heart:''')
     stock_data = get_stock_data(st.session_state.selected_stock)
 
     if not stock_data.empty:        

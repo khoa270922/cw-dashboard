@@ -71,7 +71,7 @@ if 'selected_stock' not in st.session_state:
 # Left Panel Layout
 with st.sidebar:
     #st.sidebar.title("Stock Input Panel")
-    stock_name_input = st.sidebar.text_input("INPUT YOUR STOCK:")
+    stock_name_input = st.sidebar.text_input("INPUT STOCK:")
     #stock_name = st.text_input("## nhập mã cổ phiếu")
 
     if stock_name_input:

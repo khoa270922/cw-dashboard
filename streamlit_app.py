@@ -79,10 +79,9 @@ with st.sidebar:
         #st.query_params.selected_stock=stock_name_input)  # Keep the selection state
 
 # Main Content: Display the query result on the right
-# st.title("Stock Data Dashboard")
-st.title("_Stock Dashboard_ is :blue[cool] :sunglasses:")
+# st.title("_Stock Dashboard_ is :blue[cool] :sunglasses:")
 if st.session_state.selected_stock:
-    st.markdown(f'''Happy analyz-ing {st.session_state.selected_stock} :heart:''')
+    st.markdown(f''':sunglasses: Happy analyz-ing :blue[{st.session_state.selected_stock}] :heart:''')
     stock_data = get_stock_data(st.session_state.selected_stock)
 
     if not stock_data.empty:        

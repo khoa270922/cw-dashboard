@@ -1,0 +1,37 @@
+Index:
+  HOSE:
+    - VNINDEX
+    - VN30
+  HNX:
+    - HNX30
+  UPCOM:
+    - UPCOMINDEX
+
+Equity:
+  Underlying:
+    - ACB
+    - FPT
+    - HPG
+    - MBB
+    - MWG
+
+urls:  
+  vietstock:
+    'history': 'https://api.vietstock.vn/tvnew/history?symbol='
+
+headers:
+  vietstock:
+    header_0:
+      User-Agent: Mozilla/5.0
+      Content-Type: "application/json"
+      Accept: "*/*"
+      Cache-Control: no-cache
+      Accept-Encoding: gzip,deflate, br, zstd
+      Connection: keep-alive
+      Host: 'api.vietstock.vn'
+      Origin: 'https://stockchart.vietstock.vn'
+      Referer: 'https://stockchart.vietstock.vn/'
+      sec-ch-ua-mobile: ?0
+      sec-ch-ua-platform: macOS
+      sec-fetch-mode: cors
+      sec-fetch-site: same-site

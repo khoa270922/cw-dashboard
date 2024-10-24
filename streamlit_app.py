@@ -7,7 +7,6 @@ import yaml
 import pandas as pd
 import altair as alt
 import requests
-import json
 
 # Load YAML configuration
 with open('config.yaml', 'r') as file:

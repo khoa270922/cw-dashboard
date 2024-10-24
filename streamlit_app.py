@@ -88,13 +88,13 @@ with st.sidebar:
   
 
     if stock_name_input:
-        st.session_state.selected_stock = stock_name_input  # Store the selected stock name
+        st.session_state.selected_stock = stock_name_input.upper()  # Store the selected stock name
         #st.query_params.selected_stock=stock_name_input)  # Keep the selection state
 
 # Main Content: Display the query result on the right
 if st.session_state.selected_stock:
     
-    st.markdown(f''':sunglasses: Happy analyz-ing :blue[{st.session_state.selected_stock}] :heart:''')
+    st.markdown(f''':heart: Happy analyz-ing :heart: :blue[{st.session_state.selected_stock}] :sunglasses:''')
     
     ts_data = get_ts(st.session_state.selected_stock)
     

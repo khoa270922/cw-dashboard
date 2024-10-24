@@ -151,7 +151,7 @@ if st.session_state.selected_stock:
         area_chart = alt.Chart(df_melted).mark_area().encode(
             x=alt.X('Date:O', title="", axis=alt.Axis(title='')),
             y=alt.Y('sum(Percentage):Q', title="", axis=None),
-            color=alt.Color('Rating:N', scale=area_color).legend(orient="bottom"),  # Custom colors for ratings
+            color=alt.Color('Rating:N', scale=area_color, title="").legend(orient="bottom"),  # Custom colors for ratings
             opacity={"value": 0.7},
             tooltip=[alt.Tooltip('stock:N', title="Stock"), alt.Tooltip('date:T', title="Date"), alt.Tooltip('Rating:N', title="Recommendation"), alt.Tooltip('Percentage:Q', format='.0%', title="Ratio")]  # Tooltips for interactivity
         ).properties(

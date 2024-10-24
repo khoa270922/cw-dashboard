@@ -98,25 +98,28 @@ if st.session_state.selected_stock:
     
     ts_data = get_ts(st.session_state.selected_stock)
     
-    today = dt.date.today()
-    from_date = round(pd.Timestamp(ts_data['date'].min()).timestamp())
-    to_date = round(time.mktime((today.year, today.month, today.day, 0, 0, 0, 0, 0, 0)))
     
-    h_data = get_h(st.session_state.selected_stock, from_date, to_date)
-    
-    if not h_data.empty:
-        line_chart = alt.Chart(h_data).mark_line(point=True).encode(
-            x=alt.X('Date:O', title=''),
-            y=alt.Y('c:Q', title='Closed Price').scale(zero=False), # Set custom order for Y-axis
-            tooltip=[alt.Tooltip('Date:O'), alt.Tooltip('c:Q', title='ClosePrice'),]
-        ).properties(
-            width=600,  # Customize the width
-            height=300  # Customize the height
-        )
-        st.altair_chart(line_chart, use_container_width=True)
+
 
     if not ts_data.empty:        
 
+        today = dt.date.today()
+        from_date = round(pd.Timestamp(ts_data['date'].min()).timestamp())
+        to_date = round(time.mktime((today.year, today.month, today.day, 0, 0, 0, 0, 0, 0)))
+        
+        h_data = get_h(st.session_state.selected_stock, from_date, to_date)
+        
+        if not h_data.empty:
+            line_chart = alt.Chart(h_data).mark_line(point=True).encode(
+                x=alt.X('Date:O', title=''),
+                y=alt.Y('c:Q', title='Closed Price').scale(zero=False), # Set custom order for Y-axis
+                tooltip=[alt.Tooltip('Date:O'), alt.Tooltip('c:Q', title='ClosePrice'),]
+            ).properties(
+                width=600,  # Customize the width
+                height=300  # Customize the height
+            )
+            st.altair_chart(line_chart, use_container_width=True)
+            
         # Display line chart
         recommend_order = ['STRONG_BUY', 'BUY', 'NEUTRAL', 'SELL', 'STRONG_SELL']
 
@@ -163,4 +166,4 @@ if st.session_state.selected_stock:
         st.altair_chart(area_chart, use_container_width=True)
 
     else:
-        st.write('No data for this stock')
+        st.write('No data or analysis, please type another stock!')
